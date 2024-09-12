@@ -43,8 +43,8 @@ def nearest_neighbor(target_vector, vectors):
     ### YOUR CODE HERE
     min_cos = float("Inf")
     min_idx = 0
-    for i, j in enumerate(vectors):
-        cos_val = cosine_similarity(target_vector, j)
+    for i in range(len(vectors)):
+        cos_val = cosine_similarity(target_vector, vectors[j])
         if cos_val < min_cos:
             min_cos = cos_val
             min_idx = i
