@@ -41,11 +41,11 @@ def nearest_neighbor(target_vector, vectors):
     # Hint: For this lab, you can just use a for loop to iterate through vectors.
     '''
     ### YOUR CODE HERE
-    min_cos = float("Inf")
+    max_cos = -1
     min_idx = 0
-    for i in range(len(vectors)):
-        cos_val = cosine_similarity(target_vector, vectors[i])
-        if cos_val < min_cos:
-            min_cos = cos_val
+    for i, j in enumerate(vectors):
+        cos_val = cosine_similarity(target_vector, j)
+        if cos_val > max_cos:
+            max_cos = cos_val
             min_idx = i
     return min_idx
